@@ -3,9 +3,7 @@
 ## **Features**
 - Create, retrieve, update, and delete tasks
 - Authentication using JWT
-- Input validation with `Joi`
 - Error handling middleware
-- Soft delete functionality
 
 ## Setup Instructions
 
