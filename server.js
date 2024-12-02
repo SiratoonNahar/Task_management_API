@@ -1,12 +1,14 @@
 const express=require('express');
 const mongodbConnection=require('./config/mongodbConnect');
 const taskroutes=require('./routes/task.route')
+const authenticateToken=require('./middlewares/authmiddleware')
 require('dotenv').config();
 const app=express()
 
 app.use(express.json())
 
 const PORT=process.env.PORT||5000;
+app.use(authenticateToken);
 app.use('/tasks',taskroutes)
 
 app.listen(PORT,async()=>{

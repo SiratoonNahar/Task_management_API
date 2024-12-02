@@ -1,4 +1,5 @@
 const express=require('express');
+const authenticateToken = require('../middlewares/authmiddleware');
 const taskRouter=express.Router();
 const {createTask,
     getTask,
@@ -6,10 +7,10 @@ const {createTask,
     updateTask,
     deleteTask}=require('../controllers/task.controller')
 
-taskRouter.post('/create',createTask);
-taskRouter.get('/gettask',getTask);
-taskRouter.get('/:id',getTaskbyId);
-taskRouter.put('/:id',updateTask);
-taskRouter.delete('/:id',deleteTask)
+taskRouter.post('/create',authenticateToken,createTask);
+taskRouter.get('/gettask',authenticateToken,getTask);
+taskRouter.get('/:id',authenticateToken,getTaskbyId);
+taskRouter.put('/:id',authenticateToken,updateTask);
+taskRouter.delete('/:id',authenticateToken,deleteTask)
 
 module.exports=taskRouter
