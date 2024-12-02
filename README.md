@@ -71,7 +71,8 @@ Directory structure:
 Task_Management_API/
 │
 ├── controllers/       # Controller logic for handling requests
-├── middlewares/        # Custom middleware (e.g., authentication)
+├── config/            #connection of mongodb
+├── middlewares/       # Custom middleware (e.g., authentication)
 ├── models/            # Mongoose schemas
 ├── routes/            # Route definitions
 ├── server.js          # Server entry point
